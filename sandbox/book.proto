@@ -6,10 +6,6 @@ message Book {
   int32 page_count = 3;
 }
 
-message CheckoutRequest {
-  Book book = 1;
-}
-
 service Library {
-  rpc checkoutBook(CheckoutRequest) returns (Book) {}
+  rpc checkoutBook(Book) returns (Book) {}
 }
