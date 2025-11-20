@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Book {
+  string title= 1;
+  string author = 2;
+  int32 page_count = 3;
+}
+
+message CheckoutRequest {
+  Book book = 1;
+}
+
+service Library {
+  rpc checkoutBook(CheckoutRequest) returns (Book) {}
+}
